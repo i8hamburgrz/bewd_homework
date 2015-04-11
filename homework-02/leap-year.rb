@@ -13,7 +13,7 @@ current_year = start_year
 
 check_times.times do
 	if (current_year % 4) == 0
-		if ((current_year % 100 ) != 0) || ((current_year % 400) == 0)
+		if ((current_year % 100 ) != 0) or ((current_year % 400) == 0)
 			puts "#{ current_year }"
 		end
 	end
