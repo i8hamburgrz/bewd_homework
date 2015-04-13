@@ -12,9 +12,10 @@ get '/answer' do
 	@my_answer = params[:my_answer].downcase
 	@comp_answer = params[:comp_answer].downcase
 
+	# ANSWERS
 	@answer_lost = "Sorry, #{ @comp_answer } beats #{ @my_answer }. Better luck next time!"
 	@answer_won = "You won! Congratulations!"
-	@answer_tie = "IT'S A TIE!!! HORRAY!!!"
+	@answer_tie = "IT'S A TIE!!! HOORAAAAAAY!!!"
 
 	erb :answer
 end
