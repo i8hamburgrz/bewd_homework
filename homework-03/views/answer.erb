@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Index Page</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+
+		    <p>Computer's move = <%= @comp_answer %><br>
+        My Move = <%= @my_answer %></p>
+
+        <% if !(@my_answer == @comp_answer) %>
+
+          <!-- User answer is scissors -->
+          <% if @my_answer == "scissors" %>
+            <% if @comp_answer == "rock" %>
+              <strong><p class="text-danger"><%= @answer_lost %></p></strong>
+            <% else %>
+              <strong><p class="text-success"><%= @answer_won %></p></strong>
+            <% end %>
+          <% end %>
+
+          <!-- User answer is paper -->
+          <% if @my_answer == "paper" %>
+            <% if @comp_answer == "scissors" %>
+              <strong><p class="text-danger"><%= @answer_lost %></p></strong>
+            <% else %>
+              <strong><p class="text-success"><%= @answer_won %></p></strong>
+            <% end %>
+          <% end %>
+
+          <!-- User answer is rock -->
+          <% if @my_answer == "rock" %>
+            <% if @comp_answer == "paper" %>
+              <strong><p class="text-danger"><%= @answer_lost %></p></strong>
+            <% else %>
+              <strong><p class="text-success"><%= @answer_won %></p></strong>
+            <% end %>
+          <% end %>
+
+        <!-- Its a tie -->
+        <% else %>
+          <strong><p class="text-warning"><%= @answer_tie %></p></strong>
+        <% end %>
+
+		    <p><a class="btn btn-primary btn-block" href="/">Try Again?</a></p>
+    	</div>
+   </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>
