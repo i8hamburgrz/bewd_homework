@@ -32,5 +32,11 @@ post '/results' do
 	@temp_hi = parsed_forecast['daily']['data'][0]['temperatureMax']
 	@temp_low = parsed_forecast['daily']['data'][0]['temperatureMin']
 
+	if @temp_hi > 74 
+		@message = "<span style='color:red'> Today is Shorts Day!!! YAY!!!</span>"
+	else
+		@message = "<span style='color:blue'> Today is Pants Day!!! BRRRRRR!!!</span>"
+	end
+
 	erb :results
 end
