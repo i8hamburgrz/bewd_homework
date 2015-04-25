@@ -1,0 +1,20 @@
+<% @books.each_with_index do |books_hash, index|
+	# loop through each property 20 times
+	if index < 20 
+
+		#if the hash has a key with the property fiction, continue
+		if books_hash['Class'] == "Fiction" %>
+			<strong><p>Title: <%= books_hash['Title'] %></strong><br>
+
+			<% book_description = books_hash['BriefDescription']
+
+			#if the description key is not empty, print the description
+			if book_description != "" %>
+				Description: <%= book_description %></p>
+			<%end
+		end
+	end
+ end %>
+
+ <p><a href="/">Go Back >> </a></p>
+	

@@ -1,0 +1,10 @@
+<p>What week from USA Today would you like to see the top 20 fiction books titles/descriptions?
+<form action="/list" method="post">
+	<select name="week_number">
+		<% @weeks.times do |index| %>
+	  		<option value="<%= index %>">Week <%= index + 1 %></option>
+  		<% end %>
+	</select>
+
+	<input type="submit" value="Submit">
+</form>

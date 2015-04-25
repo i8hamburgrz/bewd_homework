@@ -1,0 +1,10 @@
+<% if @temp_hi > 74 %>
+	<h1 style="color:red"> Today is Shorts Day!!! YAY!!!!</h1>
+<% else %>
+	<h1 style="color:blue"> Today is Pants Day!!! BRRRRRR!!!</h1>
+<% end %>
+
+<p>Todays temperature:<p>
+
+<p><strong>High</strong>: <%= @temp_hi %> <br />
+<strong>Low</strong>: <%= @temp_low %></p>
