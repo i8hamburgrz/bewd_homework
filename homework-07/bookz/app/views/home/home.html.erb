@@ -1,0 +1,19 @@
+<h1>The Bookz Application</h1>
+
+<p>What would you like to do?</p>
+<p><a href="/authors/new">Add Author</a><br/>
+<a href="/books/new">Add Book</a></p>
+
+<h2>Books:</h2>
+<% @books.each do |b| %>
+<ul>
+	<li><%= b.title %> | Genre: <%= b.genre %> | Year Published: <%= b.year %> | Author: <%= b.author.pluck(:name).to_sentence %></li>
+</ul>
+<% end %>
+
+<h2>Authors:</h2>
+<% @authors.each do |a| %>
+<ul>
+	<li><%= a.name %></li>
+</ul>
+<% end %>
