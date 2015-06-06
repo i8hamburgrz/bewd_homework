@@ -14,3 +14,35 @@
  *= require_self
  */
 
+h1, h2 {
+  color: peachpuff;
+}
+
+h1 {
+  color: #000000;
+}
+
+.home-page {
+  font-style: italic;
+}
+
+h1 {
+  color: grey;
+}
+
+a {
+  color: pink;
+}
+
+a:visited {
+  color: chartreuse;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: dodgerblue;
+}
+

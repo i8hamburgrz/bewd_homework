@@ -1,0 +1,11 @@
+<h1>Add Skills</h1>
+
+<%= form_for @skills do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br><br>
+
+  <%= f.submit 'Add' %>
+
+<% end %>
