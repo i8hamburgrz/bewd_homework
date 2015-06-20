@@ -1,0 +1,66 @@
+    <div id="list-items">
+        <% unless @last_day_items.empty? %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-warning">The following will expire after today:</h2>
+                    <ul class="bg-warning expire-list">
+                    <% @last_day_items.each do |item| %>
+                        <li><%= item %></li>                
+                    <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+        <% unless @expired_items.empty? %>
+    	<div class="container">
+    	    <div class="row">
+    	        <div class="col-lg-12">
+    	            <h2 class="text-danger">The following Items Are Expired:</h2>
+    	            <ul class="bg-danger expire-list">
+    	            <% @expired_items.each do |item| %>
+	    	            <li><%= item %></li>   	            
+    	            <% end %>
+    	            </ul>
+    	        </div>
+    	    </div>
+    	</div>
+        <% end %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Current Items</h2>
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tr>
+                            <th>#</th>
+                            <th>Item</th>
+                            <th>Expiration Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <% @items.each_with_index do |i, n| %>
+                        <tr>
+                        <td><%= n + 1 %></td>
+                        <td><%= i.name %></td>
+                        <td><%= i.expiration_date %></td>
+                        <td><%= link_to "Edit", edit_item_path(i.id) %></td>
+                        <td><%= link_to 'Delete', item_path(:id => i.id), :method => :delete %></td>
+                        </tr>
+                        <% end %>
+                      </table>
+                    </div>
+
+                    <%= link_to new_item_path do %>
+                      <button class="btn btn-default">New</button>
+                    <% end %>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="task-form" style="display:none;"></div>
